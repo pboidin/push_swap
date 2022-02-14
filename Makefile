@@ -28,16 +28,16 @@ all: 	$(NAME_PUSH_SWAP) $(NAME_CHECKER)
 
 #		Convert .c to .o
 %.o:	%.c $(INCLUDES)
-	@$(CC) $(FLAGS) -I $(INCLUDES_PATH) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(INCLUDES_PATH) -c $< -o $@
 
 #		Compile Push_Swap Program
 $(NAME_PUSH_SWAP):	$(INCLUDES) $(PUSH_SWAP_OBJS) $(SHARED_OBJS)
-						@$(CC) $(FLAGS) -I $(INCLUDES_PATH) $(PUSH_SWAP_OBJS) $(SHARED_OBJS) -o $(NAME_PUSH_SWAP)
+						@$(CC) $(CFLAGS) -I $(INCLUDES_PATH) $(PUSH_SWAP_OBJS) $(SHARED_OBJS) -o $(NAME_PUSH_SWAP)
 						@echo "Push_swap Created !"
 
 #		Compile Checker
 $(NAME_CHECKER):	$(INCLUDES) $(CHECKER_OBJS) $(SHARED_OBJS)
-						@$(CC) $(FLAGS) -I $(INCLUDES_PATH) $(CHECKER_OBJS) $(SHARED_OBJS) -o $(NAME_CHECKER)
+						@$(CC) $(CFLAGS) -I $(INCLUDES_PATH) $(CHECKER_OBJS) $(SHARED_OBJS) -o $(NAME_CHECKER)
 						@echo "Checker Created !"
 
 #		Clean
